@@ -7,17 +7,29 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Gbedu Blog') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="{{ asset('js/toastr.min.js') }}" defer></script>
+    <script>
+        @if(Session::has('success'))
+           toastr.success("{{ Session::get('success') }}")
+        @endif
+
+        // check session for toastr info
+        @if(Session::has('info'))
+             toastr.info("{{ Session::get('info') }}")
+        @endif
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -73,17 +85,31 @@
         </nav>
 
         <div class="container">
+            <br>
             <div class="row">
                 @if (Auth::check())
                 <div class="col-lg-4">
                         <div class="list-group">
-                                    <li class="list-group-item">
-                                        <a href="{{ route('home') }}">Home Page</a>
-                                    </li>
+                            
+                            <li class="list-group-item">
+                               <a href="{{ route('home') }}">Home Page</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('categories') }}">Categories Page</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('posts') }}">Posts Page</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('posts.trashed') }}">Trashed Posts Page</a>
+                            </li>
+                            <li class="list-group-item">
+                               <a href="{{ route('category.create') }}">Create new Category</a>
+                            </li>
                             <li class="list-group-item">
                                 <a href="{{ route('post.create') }}">Create new post</a>
                             </li>
-                        </div>
+                       </div>
                     </div>
                     
                 @endif

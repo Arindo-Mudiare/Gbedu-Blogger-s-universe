@@ -160,6 +160,7 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
         /*
@@ -225,5 +226,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
 
 ];
