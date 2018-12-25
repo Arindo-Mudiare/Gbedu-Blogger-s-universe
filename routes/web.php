@@ -105,4 +105,35 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         'uses' => 'CategoriesController@update',
         'as' => 'category.update'
     ]);
+
+    // TAGS ROUTES
+    Route::get('/tags', [
+        'uses' => 'TagsController@index',
+        'as' => 'tags'
+    ]);
+     // Create New Tag route
+     Route::get('/tag/create', [
+        'uses' => 'TagsController@create',
+        'as' => 'tag.create'
+    ]);
+     // Store Tag route
+     Route::post('/tag/store', [
+        'uses' => 'TagsController@store',
+        'as' => 'tag.store'
+    ]);
+    // Edit Tag
+    Route::get('/tag/edit/{id}', [
+        'uses' => 'TagsController@edit',
+        'as' => 'tag.edit'
+    ]);
+     // Delete Tag
+     Route::get('/tag/delete/{id}', [
+        'uses' => 'TagsController@destroy',
+        'as' => 'tag.delete'
+    ]);
+    // Update Tag route
+    Route::post('/tag/update/{id}', [
+        'uses' => 'TagsController@update',
+        'as' => 'tag.update'
+    ]);
 });

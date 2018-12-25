@@ -98,17 +98,25 @@
                                 <a href="{{ route('categories') }}">Categories Page</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('posts') }}">Posts Page</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="{{ route('posts.trashed') }}">Trashed Posts Page</a>
-                            </li>
-                            <li class="list-group-item">
                                <a href="{{ route('category.create') }}">Create new Category</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('tags') }}">Tags Page</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('tag.create') }}">Create New Tag</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('posts') }}">Posts Page</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('post.create') }}">Create new post</a>
                             </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('posts.trashed') }}">Trashed Posts Page</a>
+                            </li>
+                            
+                            
                        </div>
                     </div>
                     
